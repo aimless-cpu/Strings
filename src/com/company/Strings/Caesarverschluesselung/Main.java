@@ -1,56 +1,104 @@
 package com.company.Strings.Caesarverschluesselung;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        String input = "hans";
+        String rerun = "rerun";
+        String stringToEncode = null;
+        String stringToDecode = null;
 
-        System.out.println(input.charAt(0));
+        while (rerun.equalsIgnoreCase("rerun")) {
 
-        //int encrypt = input.charAt(0)+2;
-        //System.out.println((char)encrypt);
+            Scanner sc = new Scanner(System.in);
 
-        int[] encrypt = new int[input.length()];
+            if (stringToEncode==null) {
+                System.out.println("String?");
+                stringToEncode = sc.next();
+            }
 
-        for (int i=0;i<input.length();i++) {
+                System.out.println("encrypt or decrypt?");
+                String inputSwitch = sc.next();
 
-            encrypt[i] = input.charAt(i)+2;
+                int key;
+                char[] output;
+
+                switch (inputSwitch) {
+                    case "encrypt":
+                        System.out.println("key?");
+                        key = sc.nextInt();
+
+                        output = getEncrypt(stringToEncode, key);
+                        stringToDecode = new String(output);
+
+                        System.out.println(output);
+
+                        break;
+
+                    case "decrypt":
+                        System.out.println("key?");
+                        key = sc.nextInt();
+
+                        output = getDecrypt(stringToDecode, key);
+                        //stringToEncode = output;
+
+                        System.out.println(output);
+
+                        break;
+
+                    default:
+                        System.out.println("nope");
+
+                }
+
+            System.out.println("Type rerun to rerun.");
+
+
+                rerun = sc.next();
+
 
         }
 
-        //string buffer is to use
-
-        System.out.println(encrypt.toString());
+    }
 
 
+   public static char[] getEncrypt(String stringToEncode, int a) {
+        int[] encrypt = new int[stringToEncode.length()];
 
+        for (int i = 0; i< stringToEncode.length(); i++) {
 
-
-/*
-        char ch = 'a';
-
-        int ascii = ch;
-        int newCharacter = ascii + 2;
-
-        // You can also cast char to int
-        int castAscii = (int) ch;
-
-        char encryptedChar = (char) newCharacter;
-        System.out.println(encryptedChar);
-        System.out.println("The ASCII value of " + ch + " is: " + ascii);
-
- */
-
-
-
-
-
-
-
-
-
-
+        encrypt[i] = stringToEncode.charAt(i)+a;
 
     }
+        char[] output = new char[stringToEncode.length()];
+
+        for (int j = 0; j< stringToEncode.length(); j++) {
+            output[j] = (char)encrypt[j];
+        }
+
+        return output;
+    }
+
+    public static char[] getDecrypt(String stringToDecode, int a) {
+        int[] encrypt = new int[stringToDecode.length()];
+
+        for (int i = 0; i< stringToDecode.length(); i++) {
+
+            encrypt[i] = stringToDecode.charAt(i)-a;
+
+        }
+
+        char[] output = new char[stringToDecode.length()];
+
+        for (int j = 0; j< stringToDecode.length(); j++) {
+            output[j] = (char)encrypt[j];
+        }
+
+        return output;
+    }
+
+
+
 }
