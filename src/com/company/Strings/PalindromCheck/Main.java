@@ -19,8 +19,7 @@ public class Main {
     }
 
     private static boolean isPalindrom(StringBuilder sb) {
-        boolean out = sb.toString().equalsIgnoreCase(sb.reverse().toString());
-        return out;
+        return sb.toString().equalsIgnoreCase(sb.reverse().toString());
     }
 
 }
