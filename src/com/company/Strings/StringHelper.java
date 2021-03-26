@@ -21,31 +21,24 @@ public class StringHelper {
         StringBuilder sb = new StringBuilder(inputString);
         return  sb.reverse().toString();
     }
-/*
-    public static String printAmountOfLetters(String inputString) {
 
-        inputString = "Der Tag ist schön.";
+    public static void printAmountOfLetters(String input, int[] intArray) {
+        for (int i = 0; i< input.length(); i++) {
+            int tmp = input.toCharArray()[i];
+            intArray[tmp]++;
 
-        //to char[]
-        char[] charArray = new char[129];
+        }
 
+        for (int j=0; j<129; j++) {
 
-        //to int[]
-        int[] intArray = new int[129];
+            if (intArray[j] != 0) {
+                System.out.println((char)j + ":" + intArray[j]);
+            }
 
-
-
-
-
-
-
-
-        return ;
-
+        }
 
     }
 
- */
 
 
 

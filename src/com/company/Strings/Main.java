@@ -20,36 +20,16 @@ public class Main {
 
          */
 
+
+
+        String input = "Strings can suck my ...++++!!!!";
+
         int[] intArray = new int[129];
 
-        String input = "Das ist ein Tag";
-
-        input.toCharArray();
-
-        //intArray[(int)input.toCharArray()[0])] = intArray[(int)input.toCharArray()[0])] + 1;
-
-        intArray[] = intArray[68] + 1;
+        printAmountOfLetters(input, intArray);
 
 
-
-
-
-        System.out.println("debug");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // write your code here
     }
+
+
 }
