@@ -2,6 +2,7 @@ package com.company.Strings;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class StringHelper {
 
@@ -27,7 +28,7 @@ public class StringHelper {
 
     public static Set<String> printAmountOfLetters(String input, int[] intArray) {
 
-        Set<String> output = new HashSet<>();
+        Set<String> output = new TreeSet<>();
 
         for (int i = 0; i< input.length(); i++) {
             int tmp = input.toCharArray()[i];
@@ -39,7 +40,6 @@ public class StringHelper {
 
             if (intArray[j] != 0) {
                 output.add((char)j + ":" + intArray[j]);
-                //System.out.println((char)j + ":" + intArray[j]);
             }
 
         }

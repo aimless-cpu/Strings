@@ -21,7 +21,7 @@ public class Main {
         String output = reverseString(inputString);
         System.out.println(output);
 */
-        String input = "Strings can suck my ...++++!!!!";
+        String input = "AAA bb Strings can suck my ...++++!!!!";
         int[] intArray = new int[129];
 
         Set<String> output = printAmountOfLetters(input, intArray);
