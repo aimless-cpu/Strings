@@ -1,5 +1,8 @@
 package com.company.Strings;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class StringHelper {
 
     /*
@@ -22,7 +25,10 @@ public class StringHelper {
         return  sb.reverse().toString();
     }
 
-    public static void printAmountOfLetters(String input, int[] intArray) {
+    public static Set<String> printAmountOfLetters(String input, int[] intArray) {
+
+        Set<String> output = new HashSet<>();
+
         for (int i = 0; i< input.length(); i++) {
             int tmp = input.toCharArray()[i];
             intArray[tmp]++;
@@ -32,10 +38,17 @@ public class StringHelper {
         for (int j=0; j<129; j++) {
 
             if (intArray[j] != 0) {
-                System.out.println((char)j + ":" + intArray[j]);
+                output.add((char)j + ":" + intArray[j]);
+                //System.out.println((char)j + ":" + intArray[j]);
             }
 
         }
+
+
+        return output;
+
+
+
 
     }
 

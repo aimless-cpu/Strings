@@ -1,5 +1,8 @@
 package com.company.Strings;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import static com.company.Strings.StringHelper.*;
 
 public class Main {
@@ -17,16 +20,14 @@ public class Main {
         String inputString = "katze";
         String output = reverseString(inputString);
         System.out.println(output);
-
-         */
-
-
-
+*/
         String input = "Strings can suck my ...++++!!!!";
-
         int[] intArray = new int[129];
 
-        printAmountOfLetters(input, intArray);
+        Set<String> output = printAmountOfLetters(input, intArray);
+        System.out.println(output);
+
+
 
 
     }
